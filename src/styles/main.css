@@ -1,3 +1,132 @@
-img {
-  display: block;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
+
+body,
+html {
+  background-color: #101112;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+}
+
+/* 
+    Hero
+*/
+
+.hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)), url(../public/images/heros/hero-image_4.jpg);
+  height: 1000px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero__inner {
+  padding-top: 250px;
+  text-align: center;
+}
+
+.hero__title {
+  color: #fff;
+  font-weight: 500;
+  font-size: 40px;
+}
+
+.hero__title span {
+  color: #ffc23c;
+}
+
+.hero__tagline {
+  color: #fff;
+  margin-top: 16px;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+/* 
+    Navbar
+*/
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 45px;
+  padding-right: 8%;
+  padding-left: 8%;
+}
+
+.nav__title {
+  color: white;
+  font-size: 25px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.nav__title span {
+  color: #ffc23c;
+}
+
+.nav__list {
+  list-style-type: none;
+}
+
+.nav__item {
+  display: inline-block;
+  line-height: 24px;
+  padding: 10px 25px;
+  text-transform: uppercase;
+}
+
+.nav a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+  color: rgb(222, 145, 20);
+}
+
+/*
+ * main
+ */
+
+main {
+  color: white;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/*
+ * content
+ */
+
+.content {
+  padding: 32px;
+}
+
+/* @media screen and (min-width: 900px) {
+  .headline {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .headline__content {
+    padding: 16px 32px;
+  }
+
+  .posts {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+} */
