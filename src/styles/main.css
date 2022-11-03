@@ -115,16 +115,58 @@ main {
   padding: 32px;
 }
 
-/* @media screen and (min-width: 900px) {
-  .headline {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
+/*
+ * restaurant
+ */
 
-  .headline__content {
-    padding: 16px 32px;
-  }
+.restaurant {
+  width: 100%;
+}
 
+.restaurant__label {
+  color: white;
+  font-size: 40px;
+  text-align: center;
+  font-weight: 500;
+  padding: 20px;
+  margin-bottom: 100px;
+}
+
+/*
+ * post
+ */
+
+.posts {
+  margin: 32px auto auto;
+  text-align: left;
+  overflow: auto;
+}
+
+/*
+ * post item
+ */
+
+.post-item {
+  margin: 16px;
+  background-color: #5d5818;
+  width: 300px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.post-item__content {
+  padding: 16px 32px 32px 32px;
+}
+
+.post-item__thumbnail {
+  width: 100%;
+}
+
+/*
+ * responsive
+ */
+
+/* @media screen and (min-width: 1100px) {
   .posts {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
