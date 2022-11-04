@@ -22,9 +22,9 @@ body {
 
 .hero {
   background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)), url(../public/images/heros/hero-image_4.jpg);
-  height: 1000px;
   width: 100%;
-  background-size: cover;
+  height: 1000px;
+  background-size: 100% 100%;
   background-position: center;
 }
 
@@ -208,15 +208,32 @@ main {
  * footer
  */
 .footer {
-  color: white;
+  color: rgb(170, 166, 166);
   width: 100%;
   position: absolute;
   border-top: 1px solid;
   margin-top: 50px;
   padding: 30px;
   text-align: center;
-  background-color: #272a2c;
+  background-color: #101010;
   font-size: 15px;
+}
+
+/*
+ * skip to content
+ */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background-color: #5d5818;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
 }
 
 /*
@@ -224,15 +241,18 @@ main {
  */
 
 @media screen and (max-width: 600px) {
+  main {
+    max-width: 600px;
+  }
+
   .nav__list {
     display: flex;
-    position: fixed;
+    position: absolute;
     left: -100%;
     top: 6rem;
     flex-direction: column;
     background-color: rgb(26, 24, 24);
     width: 100%;
-    border-radius: 10px;
     text-align: center;
     transition: 0.3s;
     box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
@@ -244,7 +264,8 @@ main {
   }
 
   .nav__item {
-    margin: 1rem 0;
+    border-bottom: 1px solid;
+    border-color: #ffc23c;
   }
 
   .hamburger {
@@ -265,11 +286,23 @@ main {
   .hamburger.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
+
+  .hero__title {
+    font-size: 25px;
+  }
+
+  .hero__tagline {
+    font-size: 15px;
+  }
+
+  .restaurant__label {
+    font-size: 25px;
+  }
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 600px) {
   main {
-    max-width: 700px;
+    max-width: 600px;
   }
   .posts {
     display: grid;
