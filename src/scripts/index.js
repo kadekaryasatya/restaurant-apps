@@ -1,21 +1,17 @@
 import "regenerator-runtime"; /* for async await transpile */
 import "../styles/main.css";
+import App from "./views/app";
 
-const hamburger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".nav__list");
+const app = new App({
+  button: document.querySelector(".hamburger"),
+  drawer: document.querySelector(".nav__list"),
+  content: document.querySelector("#mainContent"),
+});
 
-function mobileMenu() {
-  hamburger.classList.toggle("active");
-  navMenu.classList.toggle("active");
-}
+window.addEventListener("hashchange", () => {
+  app.renderPage();
+});
 
-hamburger.addEventListener("click", mobileMenu);
-
-const navLink = document.querySelectorAll(".nav__item");
-
-function closeMenu() {
-  hamburger.classList.remove("active");
-  navMenu.classList.remove("active");
-}
-
-navLink.forEach((n) => n.addEventListener("click", closeMenu));
+window.addEventListener("load", () => {
+  app.renderPage();
+});
