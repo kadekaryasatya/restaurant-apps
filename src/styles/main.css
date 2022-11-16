@@ -64,8 +64,8 @@ body {
   justify-content: space-between;
   padding-top: 20px;
   padding-bottom: 20px;
-  padding-right: 8%;
-  padding-left: 8%;
+  padding-right: 5%;
+  padding-left: 5%;
 }
 
 .nav__title {
@@ -207,6 +207,10 @@ main {
   font-weight: 500;
 }
 
+.post-item__content a:hover {
+  color: rgb(222, 145, 20);
+}
+
 .post-item__city {
   color: #d1d1ca;
 }
@@ -220,6 +224,7 @@ main {
  */
 
 .detail {
+  font-size: 13px;
   width: 100%;
   margin: 32px auto auto;
   justify-content: center;
@@ -259,14 +264,16 @@ main {
 }
 
 .detail__categories {
+  display: flex;
 }
 
-.detail__drink {
-  margin-top: 20px;
+.detail-drink {
+  padding-left: 20px;
 }
 
 .title-review {
   margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .review-name {
@@ -274,6 +281,15 @@ main {
 }
 .review-name img {
   width: 44px;
+}
+
+.review-body {
+  margin-bottom: 20px;
+}
+
+.review-date {
+  font-size: 12px;
+  color: #8c8686fe;
 }
 
 /*
@@ -312,7 +328,7 @@ main {
  * responsive
  */
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 770px) {
   main {
     max-width: 600px;
   }
@@ -376,6 +392,10 @@ main {
 
   .restaurant__label {
     font-size: 25px;
+  }
+
+  .detail__header-info {
+    font-size: 10px;
   }
 }
 

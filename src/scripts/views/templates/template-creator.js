@@ -15,11 +15,15 @@ const createRestaurantDetailTemplate = (restaurant) => `
     <p>${restaurant.description}</p>
   </div>
   <div class="detail__categories">
-    <h3>Daftar Makanan :</h3>
-    <p>${restaurant.menus.foods.map((food) => `<li>${food.name}</li>`).join("")}</p>
-    <h3 class="detail__drink">Daftar Minuman:</h3>
-    <p> ${restaurant.menus.drinks.map((drink) => `<li>${drink.name}</li>`).join("")}</p>
-  </div>
+    <div class="detail-food">
+      <h3>Daftar Makanan :</h3>
+      <p>${restaurant.menus.foods.map((food) => `<li>${food.name}</li>`).join("")}</p>
+    </div>  
+    <div class="detail-drink">
+      <h3 class="detail__drink">Daftar Minuman:</h3>
+      <p> ${restaurant.menus.drinks.map((drink) => `<li>${drink.name}</li>`).join("")}</p>
+     </div>
+   </div>
   
   <h3 class="title-review">Review : </h3>
    <div class="detail__review">
