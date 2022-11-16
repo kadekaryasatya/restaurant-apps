@@ -55,10 +55,15 @@ body {
 */
 
 .nav {
+  background-color: #0000004f;
+  position: sticky;
+  top: 0;
+  z-index: 99;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 45px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   padding-right: 8%;
   padding-left: 8%;
 }
@@ -174,37 +179,101 @@ main {
   overflow: hidden;
 }
 
-.post-item__content {
-  display: flex;
-  padding: 16px;
+.post-item__header {
+  position: relative;
 }
 
 .post-item__thumbnail {
   width: 100%;
-  height: 40%;
+  height: 200px;
+}
+
+.post-item__rating {
+  position: absolute;
+  padding: 8px;
+  right: 0;
+  display: inline-block;
+  background-color: black;
+  color: white;
+}
+
+.post-item__content {
+  padding: 10px 10px 20px 15px;
 }
 
 .post-item__title {
+  color: white;
   font-size: 18px;
   font-weight: 500;
 }
 
-.post-item__rating {
-  background-color: #ed0d6a;
-  border-radius: 5px;
-  padding: 5px;
-  font-weight: bold;
-  margin-left: auto;
-  font-weight: 500;
-}
-
 .post-item__city {
-  padding-left: 16px;
   color: #d1d1ca;
 }
 
 .post-item__description {
   padding: 16px 16px;
+}
+
+/*
+ * detail Restaurant
+ */
+
+.detail {
+  width: 100%;
+  margin: 32px auto auto;
+  justify-content: center;
+}
+
+.detail__title {
+  color: white;
+  font-size: 35px;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 50px;
+  width: 500;
+}
+
+.detail__image {
+  width: 100%;
+  max-width: 700px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+}
+
+.detail__header-info {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.detail__item {
+  padding: 20px;
+}
+
+.detail__info {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.detail__categories {
+}
+
+.detail__drink {
+  margin-top: 20px;
+}
+
+.title-review {
+  margin-top: 20px;
+}
+
+.review-name {
+  font-weight: bold;
+}
+.review-name img {
+  width: 44px;
 }
 
 /*
