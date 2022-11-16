@@ -18,12 +18,16 @@
 // navLink.forEach((n) => n.addEventListener("click", closeMenu));
 
 const DrawerInitiator = {
-  init({ button, drawer }) {
+  init({ button, drawer, content }) {
     button.addEventListener("click", (event) => {
       this._toggleDrawer(event, drawer, button);
     });
 
     drawer.addEventListener("click", (event) => {
+      this._closeDrawer(event, drawer, button);
+    });
+
+    content.addEventListener("click", (event) => {
       this._closeDrawer(event, drawer, button);
     });
   },
