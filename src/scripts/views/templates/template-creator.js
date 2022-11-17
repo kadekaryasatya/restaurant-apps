@@ -1,6 +1,7 @@
 import CONFIG from "../../global/config";
 
 const createRestaurantDetailTemplate = (restaurant) => `
+  
 <h2 class="detail__title">${restaurant.name}</h2>
 <div class="detail__header">
 <img tabindex="0" class="detail__image" src="${CONFIG.BASE_IMAGE_URL_MD + restaurant.pictureId}" alt="${restaurant.name}" class="img__restaurant">
@@ -35,11 +36,11 @@ const createRestaurantDetailTemplate = (restaurant) => `
           <p class="review-date">${review.date}</p>
         </div>
        <div class="review-body">${review.review}
-       </div>
-    </div>`
+        </div>
+      </div>`
          )
          .join("")}
-  </div>`;
+    </div>`;
 
 const createRestaurantItemTemplate = (restaurant) => `
 <article class="post-item">
@@ -53,4 +54,43 @@ const createRestaurantItemTemplate = (restaurant) => `
   </div>
 </article> `;
 
-export { createRestaurantItemTemplate, createRestaurantDetailTemplate };
+const createLikeButtonTemplate = () => `
+  <button aria-label="like this movie" id="likeButton" class="like">
+     <i class="fa fa-heart-o" aria-hidden="true"></i>
+  </button>
+`;
+
+const createLikedButtonTemplate = () => `
+  <button aria-label="unlike this movie" id="likeButton" class="like">
+    <i class="fa fa-heart" aria-hidden="true"></i>
+  </button>
+`;
+
+const loader = {
+  show() {
+    return `
+			<div class="box">
+				<div class="loader"></div>
+			</div>
+		`;
+  },
+  hide() {
+    document.querySelector(".box").remove();
+  },
+};
+
+const emptyData = () => `
+  <div tabIndex="0" class="not-found">
+    <a class="back" href="#/home"> <- Back</a>
+		<p class="empty">Belum ada restaurant favorit anda ...</p>
+	</div>
+`;
+
+const notFoundData = () => `
+	<div tabIndex="0" class="not-found">
+     <a class="back" href="#/home"> <- Back</a>
+		<p>Maaf Tidak ada Data</p>
+	</div>
+`;
+
+export { emptyData, notFoundData, loader, createRestaurantItemTemplate, createRestaurantDetailTemplate, createLikeButtonTemplate, createLikedButtonTemplate };

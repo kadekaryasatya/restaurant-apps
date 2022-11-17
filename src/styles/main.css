@@ -6,7 +6,7 @@
 
 body,
 html {
-  background-color: #101112;
+  background-color: #0f1113;
   margin: 0;
   padding: 0;
 }
@@ -231,8 +231,9 @@ main {
 }
 
 .detail__title {
+  margin-top: 20px;
   color: white;
-  font-size: 35px;
+  font-size: 30px;
   text-align: center;
   padding: 20px;
   margin-bottom: 50px;
@@ -325,6 +326,70 @@ main {
 }
 
 /*
+  Like
+*/
+.like {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #db0000;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  border-radius: 50%;
+  border: 0;
+
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+
+/*
+  Back
+*/
+
+.back {
+  color: white;
+  padding: 5px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.back:hover {
+  color: rgb(222, 145, 20);
+}
+
+.back-button {
+  text-align: right;
+}
+
+.empty {
+  padding-top: 20px;
+}
+/*
+  Loader
+*/
+.loader {
+  border: 16px solid #5d5818; /* Light grey */
+  border-top: 16px solid #d7d7cf; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*
  * responsive
  */
 
@@ -401,7 +466,12 @@ main {
 
 @media screen and (min-width: 600px) {
   main {
-    max-width: 600px;
+    max-width: 900px;
+  }
+
+  .content {
+    padding-left: 15%;
+    padding-right: 15%;
   }
   .posts {
     display: grid;
@@ -412,7 +482,12 @@ main {
 
 @media screen and (min-width: 900px) {
   main {
-    max-width: 900px;
+    max-width: 1200px;
+  }
+
+  .content {
+    padding-left: 15%;
+    padding-right: 15%;
   }
   .posts {
     display: grid;
@@ -423,7 +498,12 @@ main {
 
 @media screen and (min-width: 1200px) {
   main {
-    max-width: 1200px;
+    max-width: 1500px;
+  }
+
+  .content {
+    padding-left: 15%;
+    padding-right: 15%;
   }
   .posts {
     display: grid;
