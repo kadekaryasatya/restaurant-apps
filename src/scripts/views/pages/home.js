@@ -1,5 +1,5 @@
-import RestaurantSource from "../../data/restaurant-source";
-import { createRestaurantItemTemplate, loader, notFoundData } from "../templates/template-creator";
+import RestaurantSource from '../../data/restaurant-source';
+import { createRestaurantItemTemplate, loader, notFoundData } from '../templates/template-creator';
 
 const Home = {
   async render() {
@@ -22,7 +22,7 @@ const Home = {
 
   async afterRender() {
     const resto = await RestaurantSource.listRestaurant();
-    const restaurantsContainer = document.querySelector("#restaurants");
+    const restaurantsContainer = document.querySelector('#restaurants');
 
     if (resto.error) {
       restaurantsContainer.innerHTML = notFoundData();

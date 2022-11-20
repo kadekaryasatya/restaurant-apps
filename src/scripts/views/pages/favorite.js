@@ -1,10 +1,10 @@
-import FavoriteRestaurantIdb from "../../data/favorite-restaurant-idb";
-import { createRestaurantItemTemplate, loader, emptyData } from "../templates/template-creator";
+import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb';
+import { createRestaurantItemTemplate, loader, emptyData } from '../templates/template-creator';
 
 const Favorite = {
   async render() {
     return `
-      <section class="content">
+      <section id="content" class="content">
           <div class="restaurant">
             <h1 class="restaurant__label">Restaurant Favorit</h1>
                <div id="restaurants" class="posts">
@@ -16,7 +16,7 @@ const Favorite = {
 
   async afterRender() {
     const resto = await FavoriteRestaurantIdb.getAllRestaurant();
-    const restaurantsContainer = document.querySelector("#restaurants");
+    const restaurantsContainer = document.querySelector('#restaurants');
     loader.hide();
     if (resto.length === 0) {
       restaurantsContainer.innerHTML = emptyData();

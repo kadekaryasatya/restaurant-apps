@@ -1,13 +1,14 @@
-import UrlParser from "../../routes/url-parser";
-import RestaurantSource from "../../data/restaurant-source";
-import { createRestaurantDetailTemplate, loader } from "../templates/template-creator";
-import LikeButtonInitiator from "../../utils/like-button-initiator";
+import UrlParser from '../../routes/url-parser';
+import RestaurantSource from '../../data/restaurant-source';
+import { createRestaurantDetailTemplate, loader } from '../templates/template-creator';
+import LikeButtonInitiator from '../../utils/like-button-initiator';
 
 const Detail = {
   async render() {
     return `
+    <input type="button" id="focus_scroll"  value="Skip to Content">
     <section class="content">
-       <div id="detail" class="detail"></div>
+       <div id="detail" class="detail" name="detail"></div>
        <div id="likeButtonContainer"></div>
        ${loader.show()}
        <div class="back-button"> <a class="back" href="#/home">List Restaurants</a></div>
@@ -18,11 +19,11 @@ const Detail = {
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const restaurant = await RestaurantSource.detailRestaurant(url.id);
-    const detail = document.querySelector("#detail");
+    const detail = document.querySelector('#detail');
     detail.innerHTML = createRestaurantDetailTemplate(restaurant);
 
     LikeButtonInitiator.init({
-      likeButtonContainer: document.querySelector("#likeButtonContainer"),
+      likeButtonContainer: document.querySelector('#likeButtonContainer'),
       restaurant: {
         id: restaurant.id,
         name: restaurant.name,

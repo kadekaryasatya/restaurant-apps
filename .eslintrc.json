@@ -10,5 +10,15 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "rules": 0
+  "rules": {
+    "no-console": "off",
+    "indent": "off",
+    "linebreak-style": "off",
+    "max-len": "off",
+    "no-underscore-dangle": "off",
+    "comma-dangle": "off",
+    "object-curly-newline": "off",
+    "no-unused-vars": "off",
+    "no-restricted-globals": "off"
+  }
 }

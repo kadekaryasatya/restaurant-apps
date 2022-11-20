@@ -7,10 +7,9 @@ class TheFooter extends HTMLElement {
     this.innerHTML = `
     <div class="footer" tabindex="0">
         <p>2022 &copy; Dek Arya | Umah <span>Makan</span></p>
-     </div>
-		`;
+     </div>`;
   }
 }
 
-customElements.define("the-footer", TheFooter);
+customElements.define('the-footer', TheFooter);
 export default TheFooter;
