@@ -4,7 +4,7 @@ import { createRestaurantItemTemplate, loader, emptyData } from '../templates/te
 const Favorite = {
   async render() {
     return `
-      <section id="content" class="content">
+      <section id="/content" class="content">
           <div class="restaurant">
             <h1 class="restaurant__label">Restaurant Favorit</h1>
                <div id="restaurants" class="posts">

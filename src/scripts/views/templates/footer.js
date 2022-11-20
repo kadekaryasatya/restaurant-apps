@@ -5,7 +5,7 @@ class TheFooter extends HTMLElement {
 
   render() {
     this.innerHTML = `
-    <div class="footer" tabindex="0">
+    <div class="footer">
         <p>2022 &copy; Dek Arya | Umah <span>Makan</span></p>
      </div>`;
   }

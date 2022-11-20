@@ -10,7 +10,7 @@ const Home = {
         <p class="hero__tagline">Kumpulan Restaurant terbaik di Indonesia</p>
       </div>
     </div>
-    <section class="content">
+    <section class="content" id="/content">
         <div class="restaurant">
           <h1 class="restaurant__label">Daftar Restaurant</h1>
              <div id="restaurants" class="posts">

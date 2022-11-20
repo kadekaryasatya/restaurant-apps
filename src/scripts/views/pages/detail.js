@@ -6,8 +6,8 @@ import LikeButtonInitiator from '../../utils/like-button-initiator';
 const Detail = {
   async render() {
     return `
-    <input type="button" id="focus_scroll"  value="Skip to Content">
-    <section class="content">
+   
+    <section class="content" id="/content">
        <div id="detail" class="detail" name="detail"></div>
        <div id="likeButtonContainer"></div>
        ${loader.show()}
