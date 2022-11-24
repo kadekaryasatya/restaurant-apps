@@ -19,6 +19,8 @@
     "comma-dangle": "off",
     "object-curly-newline": "off",
     "no-unused-vars": "off",
-    "no-restricted-globals": "off"
+    "no-restricted-globals": "off",
+    "no-undef": "off",
+    "import/no-extraneous-dependencies": "off"
   }
 }
