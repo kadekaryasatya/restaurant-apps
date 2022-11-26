@@ -4,14 +4,14 @@ import CacheHelper from './utils/cache-helper';
 // Daftar asset yang akan dicaching
 const assetsToCache = [
   './',
-  './icons/maskable_icon.png',
-  './icons/maskable_icon_x48.png',
-  './icons/maskable_icon_x72.png',
-  './icons/maskable_icon_x96.png',
-  './icons/maskable_icon_x128.png',
-  './icons/maskable_icon_x192.png',
-  './icons/maskable_icon_x384.png',
-  './icons/maskable_icon_x512.png',
+  './icons/icon_72x72.png',
+  './icons/icon_96x96.png',
+  './icons/icon_128x128.png',
+  './icons/icon_144x144.png',
+  './icons/icon_152x152.png',
+  './icons/icon_192x192.png',
+  './icons/icon_384x384.png',
+  './icons/icon_512x512.png',
   './index.html',
   './favicon.png',
   './app.bundle.js',
@@ -28,5 +28,6 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
+  console.log(event.request);
   event.respondWith(CacheHelper.revalidateCache(event.request));
 });
