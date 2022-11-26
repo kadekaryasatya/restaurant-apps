@@ -3,18 +3,17 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
-const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
 // eslint-disable-next-line prefer-destructuring
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const TerserPlugin = require('terser-webpack-plugin');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const path = require('path');
 
 module.exports = {
   entry: {
     app: path.resolve(__dirname, 'src/scripts/index.js'),
-    // sw: path.resolve(__dirname, 'src/scripts/sw.js'),
   },
   output: {
     filename: '[name].bundle.js',
@@ -56,7 +55,7 @@ module.exports = {
         test: /\.css$/,
         use: [
           {
-            loader: 'style-loader',
+            loader: MiniCssExtractPlugin.loader,
           },
           {
             loader: 'css-loader',
@@ -110,17 +109,7 @@ module.exports = {
         }),
       ],
     }),
-    // new ImageminWebpWebpackPlugin({
-    //   config: [
-    //     {
-    //       test: /\.(jpe?g|png)/,
-    //       options: {
-    //         quality: 50,
-    //       },
-    //     },
-    //   ],
-    //   overrideExtension: true,
-    // }),
+    new MiniCssExtractPlugin({ filename: '[name].[contentHash].css' }),
     new BundleAnalyzerPlugin(),
   ],
 };
