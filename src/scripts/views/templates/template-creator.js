@@ -4,7 +4,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
   
 <h2 class="detail__title">${restaurant.name}</h2>
 <div class="detail__header">
-<img tabindex="-1" class="detail__image lazyload" src="${CONFIG.BASE_IMAGE_URL_MD + restaurant.pictureId}" alt="${restaurant.name}" class="img__restaurant">
+<img tabindex="-1" class="detail__image lazyload" data-src="${CONFIG.BASE_IMAGE_URL_MD + restaurant.pictureId}" alt="${restaurant.name}" class="img__restaurant">
   <div class="detail__header-info">
     <p class="detail__item">Kota : ${restaurant.city}</p>
     <p class="detail__item">Alamat : ${restaurant.address}</p>
@@ -46,8 +46,8 @@ const createRestaurantItemTemplate = (restaurant) => `
 <article class="post-item">
   <div class="post-item__header">
     <picture>
-      <source class="lazyload" media="(max-width: 600px)" srcset="${CONFIG.BASE_IMAGE_URL_MD + restaurant.pictureId}">
-      <img  tabindex="-1"  class="post-item__thumbnail" src="${CONFIG.BASE_IMAGE_URL_MD + restaurant.pictureId}" alt="${restaurant.name}"/>
+      <source class="lazyload" " srcset="${CONFIG.BASE_IMAGE_URL_SM + restaurant.pictureId}">
+      <img  tabindex="-1"  class="post-item__thumbnail" data-src="${CONFIG.BASE_IMAGE_URL_SM + restaurant.pictureId}" alt="${restaurant.name}"/>
     </picture>
     <span class="post-item__rating"> ⭐️ ${restaurant.rating}</span>
   </div>
