@@ -1,17 +1,20 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
 const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
 // eslint-disable-next-line prefer-destructuring
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const TerserPlugin = require('terser-webpack-plugin');
+const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 
 const path = require('path');
 
 module.exports = {
   entry: {
     app: path.resolve(__dirname, 'src/scripts/index.js'),
-    sw: path.resolve(__dirname, 'src/scripts/sw.js'),
+    // sw: path.resolve(__dirname, 'src/scripts/sw.js'),
   },
   output: {
     filename: '[name].bundle.js',
@@ -40,6 +43,12 @@ module.exports = {
         },
       },
     },
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        test: /\.js(\?.*)?$/i,
+      }),
+    ],
   },
   module: {
     rules: [
@@ -57,16 +66,39 @@ module.exports = {
     ],
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, 'src/templates/index.html'),
     }),
-    new BundleAnalyzerPlugin(),
+
     new CopyWebpackPlugin({
       patterns: [
         {
           from: path.resolve(__dirname, 'src/public/'),
           to: path.resolve(__dirname, 'dist/'),
+        },
+      ],
+    }),
+    new WorkboxWebpackPlugin.GenerateSW({
+      swDest: './service-worker.js',
+      clientsClaim: true,
+      skipWaiting: true,
+      runtimeCaching: [
+        {
+          // eslint-disable-next-line prefer-regex-literals
+          urlPattern: new RegExp('https://restaurant-api.dicoding.dev/'),
+          handler: 'StaleWhileRevalidate',
+        },
+        {
+          // eslint-disable-next-line prefer-regex-literals
+          urlPattern: new RegExp('https://fonts.googleapis.com/'),
+          handler: 'StaleWhileRevalidate',
+        },
+        {
+          // eslint-disable-next-line prefer-regex-literals
+          urlPattern: new RegExp('https://fonts.gstatic.com/'),
+          handler: 'StaleWhileRevalidate',
         },
       ],
     }),
@@ -78,16 +110,17 @@ module.exports = {
         }),
       ],
     }),
-    new ImageminWebpWebpackPlugin({
-      config: [
-        {
-          test: /\.(jpe?g|png)/,
-          options: {
-            quality: 50,
-          },
-        },
-      ],
-      overrideExtension: true,
-    }),
+    // new ImageminWebpWebpackPlugin({
+    //   config: [
+    //     {
+    //       test: /\.(jpe?g|png)/,
+    //       options: {
+    //         quality: 50,
+    //       },
+    //     },
+    //   ],
+    //   overrideExtension: true,
+    // }),
+    new BundleAnalyzerPlugin(),
   ],
 };

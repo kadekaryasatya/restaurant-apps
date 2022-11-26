@@ -1,3 +1,20 @@
+// const registerSW = () => {
+//   if ('serviceWorker' in navigator) {
+//     window.addEventListener('load', () => {
+//       navigator.serviceWorker
+//         .register('/service-worker.js')
+//         .then((registration) => {
+//           console.log('SW registered: ', registration);
+//         })
+//         .catch((registrationError) => {
+//           console.log('SW registration failed: ', registrationError);
+//         });
+//     });
+//   }
+// };
+
+// export default registerSW;
+
 import * as WorkboxWindow from 'workbox-window';
 
 const swRegister = async () => {
@@ -6,7 +23,7 @@ const swRegister = async () => {
     return;
   }
 
-  const wb = new WorkboxWindow.Workbox('./sw.bundle.js');
+  const wb = new WorkboxWindow.Workbox('./service-worker.js');
 
   try {
     await wb.register();
