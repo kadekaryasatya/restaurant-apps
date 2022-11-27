@@ -21,7 +21,7 @@ body {
 */
 
 .hero {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)), url(../public/images/heros/hero-image-large.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)), url(../public/images/heros/hero-image-small.jpg);
   width: 100%;
   min-height: 600px;
   background-size: 100% 100%;

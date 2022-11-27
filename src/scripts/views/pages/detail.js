@@ -11,7 +11,7 @@ const Detail = {
        <div id="detail" class="detail" name="detail"></div>
        <div id="likeButtonContainer"></div>
        ${loader.show()}
-       <div class="back-button"> <a class="back" href="#/home">List Restaurants</a></div>
+       <div class="back-button"> <a class="back" href="#/">List Restaurants</a></div>
     </section>
     `;
   },

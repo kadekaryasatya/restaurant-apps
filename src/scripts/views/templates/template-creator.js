@@ -46,7 +46,7 @@ const createRestaurantItemTemplate = (restaurant) => `
 <article class="post-item">
   <div class="post-item__header">
     <picture>
-      <source class="lazyload" " srcset="${CONFIG.BASE_IMAGE_URL_SM + restaurant.pictureId}">
+      <source class="lazyload" " data-srcset="${CONFIG.BASE_IMAGE_URL_SM + restaurant.pictureId}">
       <img  tabindex="-1"  class="post-item__thumbnail" data-src="${CONFIG.BASE_IMAGE_URL_SM + restaurant.pictureId}" alt="${restaurant.name}"/>
     </picture>
     <span class="post-item__rating"> ⭐️ ${restaurant.rating}</span>
@@ -83,8 +83,8 @@ const loader = {
 
 const emptyData = () => `
 <div tabIndex="0" class="not-found">
-  <a class="back" href="#/home"> <- Back</a>
-<p class="empty">Belum ada restaurant favorit anda ...</p>
+  <a class="back" href="#/"> <- Back</a>
+<h3 class="empty">Belum ada restaurant favorit anda ...</h3>
 </div>
 `;
 
