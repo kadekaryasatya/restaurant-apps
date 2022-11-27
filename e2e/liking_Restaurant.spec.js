@@ -2,6 +2,7 @@ Feature('Liking restaurant');
 
 Scenario('liking a restaurant', async ({ I }) => {
   I.amOnPage('/');
+  I.seeElement('.post-item');
   I.seeElement('.post-item__title');
   I.click(locate('.post-item__title').first());
 
@@ -17,4 +18,7 @@ Scenario('liking a restaurant', async ({ I }) => {
   I.click('#likeButton');
 
   I.amOnPage('/#/favorite');
+  I.seeElement('.posts');
+  I.seeElement('.not-found');
+  I.see('Belum ada restaurant favorit anda ...', '.empty');
 });
