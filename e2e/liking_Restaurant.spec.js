@@ -18,7 +18,7 @@ Scenario('liking a restaurant', async ({ I }) => {
   I.click('#likeButton');
 
   I.amOnPage('/#/favorite');
-  I.seeElement('.posts');
   I.seeElement('.not-found');
   I.see('Belum ada restaurant favorit anda ...', '.empty');
+  I.dontSeeElement('.post-item');
 });
